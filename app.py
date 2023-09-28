@@ -76,6 +76,8 @@ def upload_file():
         return render_template('ret.html', data=prediction)
 
     return render_template('index.html')
-
+@app.route('/try', methods=['GET', 'POST'])
+def tryh():
+    return render_template("try.html")
 if __name__ == '__main__':
     app.run(debug=True)

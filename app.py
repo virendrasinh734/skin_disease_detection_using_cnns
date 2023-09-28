@@ -4,9 +4,14 @@ from flask import Flask, request, render_template, jsonify
 import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.resnet50 import preprocess_input, decode_predictions
+import folium
+import requests
+import overpy
+import json
+from flask_cors import CORS
 
 app = Flask(__name__)
-
+CORS(app)
 # Set the upload folder and allowed file extensions
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['ALLOWED_EXTENSIONS'] = {'jpg', 'jpeg', 'png', 'gif'}
@@ -79,5 +84,64 @@ def upload_file():
 @app.route('/try', methods=['GET', 'POST'])
 def tryh():
     return render_template("try.html")
+
+@app.route("/getdoc",methods=['GET', 'POST'])
+def display_map():
+    # User's location (for example, New York)
+    try:
+
+        user_lat = float(request.form['latitude'])
+        user_lon = float(request.form['longitude'])
+        print(user_lat,user_lon)
+        # Initialize the Overpass API client
+        api = overpy.Overpass()
+
+        # Define a bounding box for the user's location (adjust as needed)
+        bounding_box = (
+            user_lat - 1, user_lon - 1,
+            user_lat + 1, user_lon + 1
+        )
+        # ['healthcare:speciality'='dermatology']
+        query = (
+            f"node['amenity'='doctors']"
+            f"({bounding_box[0]}, {bounding_box[1]}, {bounding_box[2]}, {bounding_box[3]});"
+            f"out;"
+        )
+        result = api.query(query)
+            # Extract doctor data (latitude, longitude, and additional details)
+        nearest_doctors = []
+        for node in result.nodes:
+            lat = float(node.lat)
+            lon = float(node.lon)
+            name = node.tags.get("name", "Doctor Name Unknown")  # Get the doctor's name, or use a default if not available
+            address = node.tags.get("addr:street", "Address Unknown")  # Get the address, or use a default if not available
+            phone = node.tags.get("contact:phone", "Phone Unknown")  # Get the phone number, or use a default if not available
+            name = name.replace("'", " ")
+            address = address.replace("'", " ")
+            phone = phone.replace("'", " ")
+            doctor_info = {
+                "lat": lat,
+                "lon": lon,
+                "name": name,
+                "address": address,
+                "phone": phone
+            }
+            nearest_doctors.append(doctor_info)
+        print(nearest_doctors)
+            # Create a map centered around the user's location
+        m = folium.Map(location=[user_lat, user_lon], zoom_start=12)
+        print("reached here")
+        for doctor in nearest_doctors:
+            popup_content = f"<b>Name:</b> {doctor['name']}<br><b>Address:</b> {doctor['address']}<br><b>Phone:</b> {doctor['phone']}"
+            folium.Marker([doctor['lat'], doctor['lon']], popup=popup_content).add_to(m)
+        nearest_doctors_json = json.dumps(nearest_doctors, ensure_ascii=False)
+
+            # Create a map centered around the user's location
+        m = folium.Map(location=[user_lat, user_lon], zoom_start=12)
+        print("reached here")
+        return render_template('map.html', nearest_doctors_json=nearest_doctors_json,user_lat=user_lat,user_lon=user_lon, map=m._repr_html_())
+    except Exception as e:
+        print("errr")
+        return jsonify({'error': str(e)})
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,7 @@
+folium
+requests
+flask
+tensorflow
+overpy
+flask_cors
+numpy

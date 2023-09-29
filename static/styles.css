@@ -1,22 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap");
 
-* {
-  font-family: "Raleway", sans-serif;
-}
-
 /* Reset some default styles */
-body,
-h1,
-h2,
-p {
+body, h1, h2, p {
   margin: 0;
   padding: 0;
+  color: #FFF5E0;
+  background-color:  #141E46;
+  /* background-color: #141E46; */
 }
 
 /* Apply a background color to the body */
-body {
-  background-color: #f0f0f0; /* Light gray background */
-  font-family: Arial, sans-serif; /* Use a common font */
+* {
+  font-family: 'Raleway', sans-serif;
 }
 
 /* Style the header */
@@ -24,11 +19,12 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333; /* Dark background color for the header */
+  background-color: #0c132f; /* Dark background color for the header */
   padding: 10px 20px; /* Reduce top and bottom padding */
 }
 
 .logo img {
+  border-radius: 10px;
   max-width: 100px;
 }
 
@@ -38,8 +34,8 @@ nav ul {
 }
 
 .nav-link {
+  color: #FFF5E0;
   text-decoration: none;
-  color: white;
   margin-right: 20px; /* Add right margin for spacing */
   padding: 5px 10px;
   border: 2px solid transparent; /* Transparent border initially */
@@ -58,21 +54,18 @@ nav ul {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #222; /* Dark background color for the landing section */
+  background-color:  #141E46; /* Dark background color for the landing section */
   color: white;
   position: relative; /* Add this for positioning */
 }
 
 /* Keyframes for the up and down movement */
 @keyframes moveUpDown {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(
-      -10px
-    ); /* Adjust the distance and direction as needed */
+    transform: translateY(-10px); /* Adjust the distance and direction as needed */
   }
 }
 
@@ -87,25 +80,79 @@ nav ul {
   font-size: 3rem;
   margin-bottom: 20px;
 }
+
 .innominds-text {
-  color: #449c60; /* or any other color value you prefer */
+  color: #FF6969; /* or any other color value you prefer */
 }
 
 .product-description {
   font-size: 1.2rem;
 }
 
+/* Add this CSS to your existing stylesheet */
+.detect-button {
+  text-decoration: none;
+  font-size: 20px;
+  background-color: #FF6969; /* Button background color */
+  color: #0c2935 !important; /* Text color */
+  padding: 20px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Add smooth transition for hover effect */
+}
+
+.detect-button a {
+  text-decoration: none; /* Remove underline */
+}
+
+.detect-button:hover{
+  transform: scale(1.05); /* Expand by 20% on hover */
+  background-color: #f70046e2; /* Change background color on hover */
+  color: #FFF5E0;
+}
+
+
 /* Style the prototype section */
 .prototype {
-  height: 100vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* Align header to the top */
-  /* align-items: center; */
   text-align: center;
-  background-color: #444; /* Darker background color for the prototype section */
+  background-color: #141E46; /* Darker background color for the prototype section */
   color: white;
 }
+
+/* specialists */
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 0;
+}
+
+.left {
+  width: 50%;
+  padding: 20px;
+  background-color: #fff5e0d8;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.right {
+  height: 75vh;
+  width: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFF5E0;
+}
+
 
 .header {
   margin-bottom: 20px;
@@ -116,6 +163,7 @@ nav ul {
 }
 
 .header h3 {
+  color: #FFF5E0;
   font-size: 1.2rem;
 }
 
@@ -136,17 +184,65 @@ nav ul {
 }
 
 .left h1 {
-  font-style: italic;
-  color: #020202;
+  /* font-style: italic; */
+  color: #FFF5E0;
+  border-radius: 10px;
+  padding: 10px;
+  /* background-color: #fff5e0f0; */
   font-size: 2rem;
   margin-bottom: 80px; /* Add spacing between the header and the form */
 }
-
 
 .left input[type="submit"] {
   /* Increase the button size */
   padding: 15px 30px;
   font-size: 1.2rem;
+}
+
+h1 {
+  font-size: 50px;
+  font-family: "Raleway", sans-serif;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-top: 30px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.inp {
+  padding: 8px;
+  margin-top: 5px;
+  width: 90%;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+}
+
+.beautiful-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #C70039;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform transition */
+}
+
+.beautiful-button:hover {
+  background-color: #1fc248;
+  transform: scale(1.1); /* Expands by 10% on hover */
+}
+
+
+button:hover {
+  background-color: #1fc248;
 }
 
 .right {
@@ -164,82 +260,15 @@ nav ul {
   font-size: 1.5rem; /* Adjust the font size as needed */
 }
 
-
 /* Style the our team section (add your content and styling here) */
 .ourteam {
-  height: 140vh;
-  background-color: #a09999; /* Darker background color for the our team section */
+  margin-top: 20px;
+  min-height: 50vh;
+  background-color: #141E46; /* Darker background color for the our team section */
   color: white;
 }
 
-.specialists {
-  height: 78vh;
-  background-color: #020202;
-  color: white;
-}
 
-/* Add this CSS to your existing styles.css or within the <style> tag in your HTML */
-#cameraModal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#openCameraButton {
-  background-color: #007bff; /* Change the background color as desired */
-  font-weight: bold;
-  color: #fff; /* Change the font color to white or any other color you prefer */
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#openCameraButton:hover {
-  background-color: #565658; /* Change the background color on hover as desired */
-}
-
-#cameraModal .modal-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  width: 450px; /* Adjust width as needed */
-  height: 300px; /* Adjust height as needed */
-}
-
-#cameraFeed {
-  width: 100%;
-  height: 100%;
-  border: 1px solid #ccc;
-}
-
-/* CSS for the captured image container */
-.image-container {
-  width: 400px; /* Adjust width as needed */
-  height: 600px; /* 2:3 aspect ratio (400x600) */
-  overflow: hidden;
-  border: 1px solid #ccc;
-}
-
-#takePictureButton {
-  display: block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
 
 /* Our team */
 
@@ -248,8 +277,8 @@ h1.about-us {
   text-align: center;
   font-size: 50px;
   font-weight: bold;
-  /* margin-top: 30px; */
-  padding-top: 10px;
+  margin-top: 30px;
+  /* padding-top: 10px; */
   margin-bottom: 0;
 }
 
@@ -258,15 +287,16 @@ h1.about-us {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 30px; /* Adjust the spacing between cards */
+  gap: 15px; /* Adjust the spacing between cards */
   padding: 50px;
 }
 
 /* Team member card styling */
 .team-member-card {
-  width: calc(25% - 15px); /* Adjust the width and margin as needed */
+  width: calc(25% - 5%); /* Adjust the width and margin as needed */
   height: 400px; /* Adjust the card height */
-  margin-right: 20px; /* Add margin for spacing between cards */
+  margin-left: 30px;
+  margin-right: 30px; /* Add margin for spacing between cards */
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -287,8 +317,8 @@ h1.about-us {
   width: 100%;
   padding: 10px;
   margin: 0;
-  color: white;
-  background-color: rgb(35, 42, 44);
+  color: #C70039;
+  background-color: #FFF5E0;
   font-size: 1.5rem;
   text-align: center;
   transition: bottom 0.5s ease;
@@ -309,8 +339,8 @@ h1.about-us {
   width: 100%;
   padding: 10px;
   margin: 0;
-  color: white;
-  background-color: rgb(46, 53, 54);
+  color: #FFF5E0;
+  background-color: #C70039;
   list-style: none;
   text-align: center;
   transition: bottom 0.5s ease;
@@ -338,81 +368,112 @@ h1.about-us {
 .team-member-card .social-links a:hover {
   color: #0077b5;
 }
-/* specialists */
-.container {
-  /* height: 100%; */
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  margin: 0;
-}
 
-.left {
-  /* height: 100%; */
-  /* height: 75vh; */
-  width: 50%;
-  padding: 20px;
-  background-color: #bebebe;
-  text-align: center;
+
+/* Center the content vertically and horizontally */
+.specialists {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.right {
-  height: 75vh;
-  width: 50%;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-height: 50vh; /* Increase the height for a bigger section */
+  background-color: #141E46; /* Set a background color */
+  margin-bottom: 5px; /* Add margin to create space below this section */
 }
 
-h1 {
-  font-size: 50px;
-  font-family: "Roboto", sans-serif;
+/* Style the heading */
+.specialists h1 {
+  margin-top: 150px;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #FFF5E0;
 }
 
-form {
+/* Style the form container */
+.specialists form {
+  background-color: #fff5e0c2;
+  padding: 30px; /* Increase the padding to center the form content */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease-in-out; /* Add a smooth transition effect */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* Center the content horizontally within the form */
 }
 
-label {
-  margin-top: 30px;
-  font-weight: bold;
-  font-size: 25px;
+/* Style the heading inside the form */
+.specialists form h1 {
+  
+  font-size: 24px;
+  font-weight: bolder;
+  margin-top: 0;
 }
 
-/* .left.input {
-  padding: 8000px;
-  margin-top: 500px;
-  width: 1000%;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-} */
+label[for="latitude"] {
+  color: #141E46;
+}
+label[for="longitude"] {
+  color: #141E46;
+}
 
-.inp {
+/* Style form labels and inputs */
+.specialists label,
+.specialists input {
+  display: block;
   padding: 8px;
-  margin-top: 5px;
-  width: 90%;
-  border: 1px solid #ccc;
-  border-radius: 50px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 20px;
 }
 
-button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: #007bff;
+/* Style the submit button */
+.specialists input[type="submit"] {
+  background-color: #C70039;
   color: #fff;
   border: none;
+  padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-button:hover {
+.specialists input[type="submit"]:hover {
+  background-color: #1fc248; 
+}
+
+
+/* Hover effect for the form */
+.specialists form:hover {
+  transform: scale(1.12); /* Expand by 12% on hover */
+}
+
+/* Style form labels and inputs for the email form */
+.email-form label,
+.email-form input {
+  display: block;
+  color: #141E46;
+  padding: 5px; /* Reduced padding */
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+/* Style the submit button for the email form */
+.email-form input[type="submit"] {
+  background-color: #C70039;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.email-form input[type="submit"]:hover {
   background-color: #1fc248;
 }
+
+/* Hover effect for the email form */
+.email-form form:hover {
+  transform: scale(1.12); /* Expand by 12% on hover */
+}
+

@@ -531,3 +531,41 @@ ul li::before {
 li{
   margin-bottom: 5px;
 }
+
+
+.hero {
+  background-color: #F0E68C;
+  text-align: left; /* Align text and list to the left */
+  padding: 100px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #4CAF50; /* Change font color to green */
+}
+
+.hero ul {
+  list-style-type: disc; /* Use bullet points for the list */
+  padding-left: 20px; /* Add left padding for the list */
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333; /* Change font color for list items */
+}
+
+.step-box {
+  border: 2px solid #4CAF50; /* Add a green border */
+  margin-left: 350px;
+  width: 500px;
+  padding: 20px;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+}
+.hero {
+  background-image: url('derm.jpg');
+  height: 400px;
+  background-position: center;
+  background-size: cover; /* Resize image to cover the entire container */
+}

@@ -5,3 +5,5 @@ tensorflow
 overpy
 flask_cors
 numpy
+smtplib
+email

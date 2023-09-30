@@ -477,3 +477,57 @@ label[for="longitude"] {
   transform: scale(1.12); /* Expand by 12% on hover */
 }
 
+
+  /* Your existing styles */
+
+  /* Add CSS classes for text inside Jinja template */
+.jinja-text {
+  font-size: 18px; /* Adjust the font size as needed */
+  color: #c6cf1a;
+  background: transparent; /* Light/radium font color for dark background */
+  /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); Text shadow */
+  /* Add more styles as needed */
+}
+
+/* Add a class for headings inside Jinja template */
+.jinja-heading {
+  font-size: 24px; /* Adjust the font size as needed */
+  color: #0ec10e; /* Heading font color */
+ /* Heading text shadow */
+  /* Add more styles as needed */
+}
+
+/* Style the list to remove bullets and left-align */
+.jinja-list {
+  list-style: none; /* Remove bullets */
+  padding-left: 0; /* Remove default padding */
+  text-align: left; /* Left-align list items */
+}
+
+/* Center the content within the right div */
+.right {
+  text-align: center; /* Center text content */
+}
+.points{
+  color:#1fc248;
+  font-weight: bold;
+}
+.jinja{
+  border: #0077b5,2px,;
+  border-radius: 4px;
+  border-color: #0ec10e;
+  box-shadow: inset;
+}
+#pred{
+  color: #E94F37;
+}
+#desc{
+  color: #048A81;
+}
+ul li::before {
+  content: "📌 ";
+}
+
+li{
+  margin-bottom: 5px;
+}

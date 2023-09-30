@@ -70,24 +70,22 @@
             <img src="#" alt="" id="imagePreview" style="max-width: 100%; max-height: 200px;">
 
           </div>
-          <div class="right">
+          <div class="right" style="background-color: antiquewhite;">
             <div>
               {% if data %}
-              <p>Predicted Disease: {{ data[0] }}</p>
+              <div class="jinja">
+              <p class="jinja-text" id="pred">💉 Predicted Disease: {{ data[0] }}</p>
               <br>
-              <p>Disease Description: {{ data[1] }}</p>
-              <h3>Steps to be taken: </h3>
-              <ul>
-                <li> Consult a Dermatologist: Seek professional medical advice from a dermatologist for an accurate diagnosis and treatment plan.</li>
-                <li> Follow Medical Guidance: Adhere to the prescribed treatment, medications, and skincare routines recommended by your healthcare provider.
-                </li>
-                <li>Protect from Sun: Shield your skin from sun exposure with sunscreen and protective clothing to prevent aggravating skin conditions.
-                </li>
-                <li>Maintain Hygiene: Maintain good hygiene to prevent infections and complications related to your skin condition.
-                </li>
-                <li>Avoid Scratching: Avoid scratching to prevent worsening of the condition and potential infections.
-                </li>
+              <p class="jinja-text" id="desc">🩺 Disease Description: {{ data[1] }}</p>
+              <h3 class="jinja-heading">🩸 Steps to be taken:</h3>
+              <ul class="jinja-text jinja-list">
+                <li><span class="points">Consult a Dermatologist:</span> Seek professional medical advice from a dermatologist for an accurate diagnosis and treatment plan.</li>
+                <li><span class="points">Follow Medical Guidance:</span> Adhere to the prescribed treatment, medications, and skincare routines recommended by your healthcare provider.</li>
+                <li><span class="points">Protect from Sun:</span> Shield your skin from sun exposure with sunscreen and protective clothing to prevent aggravating skin conditions.</li>
+                <li><span class="points">Maintain Hygiene:</span> Maintain good hygiene to prevent infections and complications related to your skin condition.</li>
+                <li><span class="points">Avoid Scratching:</span> Avoid scratching to prevent worsening of the condition and potential infections.</li>
               </ul>
+            </div>
             {% endif %}
 
               </div>

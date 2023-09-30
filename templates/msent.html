@@ -112,14 +112,7 @@
       </form>
       <br><br>
       <div class="email-form" id="email-section">
-        <form method="post" action="/subscribe">
-            <!-- Include a hidden input field for the 'data' variable -->
-            <input type="hidden" name="data" value="{{ data|join(',') }}">
-            <label for="email">Need details over mail id? <br> Drop your email id.</label>
-            <input type="email" name="email" id="email" required>
-            <br>
-            <input type="submit" value="Subscribe">
-        </form>
+        <p>{{message}}</p>
     </div>
     
     
@@ -187,6 +180,7 @@
   <script src="{{ url_for('static', filename='script.js') }}"></script>
   <!-- <script src="../static/script1.js"></script> -->
   <script>
+    window.location.hash = "{{ section }}";
     // Get references to the input and image elements
 const imageInput = document.getElementById('imageInput');
 const imagePreview = document.getElementById('imagePreview');

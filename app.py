@@ -1,6 +1,6 @@
 import os
 import numpy as np
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, render_template, jsonify,redirect,url_for
 import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.resnet50 import preprocess_input, decode_predictions
@@ -9,6 +9,13 @@ import requests
 import overpy
 import json
 from flask_cors import CORS
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from mail import send_email
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 app = Flask(__name__)
 CORS(app)
@@ -84,6 +91,31 @@ def upload_file():
 @app.route('/try', methods=['GET', 'POST'])
 def tryh():
     return render_template("try.html")
+
+@app.route('/subscribe', methods=['POST'])
+def subscribe():
+    # Get the email from the form
+    email = request.form.get('email')
+    data = request.form.get('data').split(',')  # Split the data by a comma
+    print(email)
+    msg=""
+    for i in range(len(data)):
+        msg+=data[i]
+    print(msg)
+    # Process and send email (your email sending logic here)
+    final_msg=f"Hello, based on the image you uploaded here is the analysis \n you have: {msg}"
+    send_email(email,final_msg)
+    # Redirect to ret.html with a message and the anchor ID in the URL
+    return redirect(url_for('ret', message=f'Email sent successfully at {email}', section='#email-section'))
+
+
+@app.route('/ret')
+def ret():
+    # Get the message and anchor ID from the query parameters in the URL
+    message = request.args.get('message', '')
+    section = request.args.get('section', '')
+
+    return render_template('msent.html', message=message, section=section)
 
 @app.route("/getdoc",methods=['GET', 'POST'])
 def display_map():

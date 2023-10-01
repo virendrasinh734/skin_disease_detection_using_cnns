@@ -577,7 +577,10 @@ label[for="longitude"] {
   width: 500px;
   padding: 20px;
   border-radius: 10px; /* Rounded corners */
-  background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+  background-color: rgba(255, 255, 255, 0.8); 
+  display: flex;
+  flex-direction: column;
+  /* Transparent white background */
 }
 .hero {
   background-image: url('derm2.jpg');
@@ -585,7 +588,7 @@ label[for="longitude"] {
   background-size: cover; /* Resize image to cover the entire container */
 }
 #home{
-  height: 75vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -594,7 +597,8 @@ label[for="longitude"] {
   justify-self: flex-end;
 }
 .detect-button{
-  margin-left: auto;
+  align-self: center;
+  /* margin-left: auto; */
 }
 #place{
   display: flex;
@@ -603,4 +607,8 @@ label[for="longitude"] {
 .container{
   display: flex;
   justify-content: flex-end;
+}
+.txt{
+  margin-top: -10px;
+  margin-bottom: 20px;
 }

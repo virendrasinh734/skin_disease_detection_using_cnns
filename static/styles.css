@@ -43,7 +43,7 @@ nav ul {
 }
 
 .nav-link:hover {
-  background-color: #555; /* Darker background on hover */
+  background-color: #e7dddd; /* Darker background on hover */
   border-color: #555; /* Darker border on hover */
 }
 
@@ -82,6 +82,7 @@ nav ul {
 }
 
 .innominds-text {
+  background: transparent;
   color: #FF6969; /* or any other color value you prefer */
 }
 

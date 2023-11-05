@@ -7,8 +7,8 @@ def send_email(user_email, information):
     smtp_port = 587  
     
     # Your Yahoo Mail email address and password
-    smtp_username = ''
-    smtp_password = ''
+    smtp_username = 'innomindscontacts@gmail.com'
+    smtp_password = 'bRN8mf3Fhr7Py4kY'
 
     msg = MIMEMultipart()
     msg['From'] = smtp_username
@@ -16,8 +16,11 @@ def send_email(user_email, information):
     msg['Subject'] = 'Skin Disease Prediction Information'
 
     # Add the information to the email body
-    body = f"Here is the information you requested:\n {information}\n\nThank you for using our service!\nStay Safe!\nRegards Team Inno_Minds"
-    msg.attach(MIMEText(body, 'plain'))
+    # body = f"Here is the information you requested:\n {information}\n\nThank you for using our service!\nStay Safe!\nRegards Team Inno_Minds"
+
+    msg.attach(MIMEText(information, 'html'))
+
+    
 
     try:
         # Create an SMTP connection with TLS (STARTTLS)

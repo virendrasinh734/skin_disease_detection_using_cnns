@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Your custom CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #dd4024;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #139092;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #fff3f7;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px 0px #bbb;
+            border: 3px solid #007BFF;
+        }
+        .header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        .content {
+            margin-top: 20px;
+        }
+        .points {
+            font-weight: bold;
+        }
+        li{
+            list-style-type: none;
+        }
+        ul{
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 style="font-size: 28px; margin: 0;">Skin Disease Prediction Information</h1>
+        </div>
+        <div class="content">
+            <h3>Hello, based on the image you uploaded, here is the analysis:</p>
+            <h3> You have been diagnosed with: </h3>
+            <p style="font-size: 16px; line-height: 1.4;">{{ information }}</p>
+            <h3>Steps that you can take: </h5>
+            <ul style="list-style-type: disc; text-align: left;">
+                <li><span class="points">🩺Consult a Dermatologist:</span> Seek professional medical advice from a dermatologist for an accurate diagnosis and treatment plan.</li>
+                <li><span class="points">🩸Follow Medical Guidance:</span> Adhere to the prescribed treatment, medications, and skincare routines recommended by your healthcare provider.</li>
+                <li><span class="points">💉Protect from Sun:</span> Shield your skin from sun exposure with sunscreen and protective clothing to prevent aggravating skin conditions.</li>
+                <li><span class="points">💉Maintain Hygiene:</span> Maintain good hygiene to prevent infections and complications related to your skin condition.</li>
+                <li><span class="points">💉Avoid Scratching:</span> Avoid scratching to prevent worsening of the condition and potential infections.</li>
+            </ul>
+            <p>Thank you for using our service!</p>
+            <p>Stay Safe!</p>
+            <p>Regards, Team Inno_Minds</p>
+            
+        </div>
+    </div>
+</body>
+</html>

@@ -104,7 +104,8 @@ def subscribe():
     print(msg)
     # Process and send email (your email sending logic here)
     final_msg=f"Hello, based on the image you uploaded here is the analysis \n you have: {msg}"
-    send_email(email,final_msg)
+    email_content = render_template('email.html', information=msg)
+    send_email(email,email_content)
     # Redirect to ret.html with a message and the anchor ID in the URL
     return redirect(url_for('ret', message=f'Email sent successfully at {email}', section='#email-section'))
 

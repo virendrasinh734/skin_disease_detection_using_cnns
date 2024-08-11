@@ -1,3 +1,6 @@
+A comprehensive tele-medicine platform for early detection of fatal skin diseases. Using powerful CNN models to diagnose possibility of fatal diseases and generate doctor recommendations.
+Implemented the backend using Flask, Geolocation based doctor recommendation feature by integrating OpenStreet Map and added feature of getting diagnostic information over email. 
+
 Homepage:
 ![image](https://github.com/user-attachments/assets/a04b21c5-2640-4bb6-aa2f-869cf7e7b88a)
 

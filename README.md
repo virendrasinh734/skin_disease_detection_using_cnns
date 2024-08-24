@@ -5,6 +5,7 @@ About the Platform:<br>
 <li>A comprehensive tele-medicine platform for early detection of fatal skin diseases. Using powerful CNN models to diagnose possibility of fatal diseases and generate doctor recommendations.</li><br>
 <li>Implemented the backend using Flask, Geolocation based doctor recommendation feature by integrating OpenStreet Map and added feature of getting diagnostic information over email. </li>
 
+
 Homepage:
 ![image](https://github.com/user-attachments/assets/a04b21c5-2640-4bb6-aa2f-869cf7e7b88a)
 
@@ -14,3 +15,11 @@ Doctor Recommendation based on Location:
 Report Generated and sent via email:
 ![image](https://github.com/user-attachments/assets/e2295ee5-b0c2-4f95-ab93-15843d41fbb4)
 
+<br>
+Steps to run the project locally:
+<li>Clone this repo</li>
+<li>Install the required libraries mentioned in requirements.txt <br>
+pip install -r -requirements.txt</li>
+<li>Move to the directory containing the app.py file</li>
+<li>Execute python app.py, the Flask server will be running at localhost:5000 by default</li>
+<br>

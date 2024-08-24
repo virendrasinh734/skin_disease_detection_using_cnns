@@ -1,9 +1,9 @@
-ML Model Info: Acheived a jacard index of 0.801 for segmentation , finetuned SAM which is a VIT based model on the skin data for segmentation.
-Hugging Face Repo Link: https://huggingface.co/Virendrasinh10/Fine_tuned_SAM_for_skin_disearse_segmentation/tree/main.
-Used DCNNs for skin disease classification(used transfer learning based approach utilising DenseNet121 ResNET and VGGnet in different iterations of the process for feature extraction, the DenseNet approach gave the best results in this case).
-About the Platform:
-A comprehensive tele-medicine platform for early detection of fatal skin diseases. Using powerful CNN models to diagnose possibility of fatal diseases and generate doctor recommendations.
-Implemented the backend using Flask, Geolocation based doctor recommendation feature by integrating OpenStreet Map and added feature of getting diagnostic information over email. 
+ML Model Info: Acheived a jacard index of 0.801 for segmentation , finetuned SAM which is a VIT based model on the skin data for segmentation.<br>
+Hugging Face Repo Link: https://huggingface.co/Virendrasinh10/Fine_tuned_SAM_for_skin_disearse_segmentation/tree/main.<br>
+Used DCNNs for skin disease classification(used transfer learning based approach utilising DenseNet121 ResNET and VGGnet in different iterations of the process for feature extraction, the DenseNet approach gave the best results in this case).<br>
+About the Platform:<br>
+<li>A comprehensive tele-medicine platform for early detection of fatal skin diseases. Using powerful CNN models to diagnose possibility of fatal diseases and generate doctor recommendations.</li><br>
+<li>Implemented the backend using Flask, Geolocation based doctor recommendation feature by integrating OpenStreet Map and added feature of getting diagnostic information over email. </li>
 
 Homepage:
 ![image](https://github.com/user-attachments/assets/a04b21c5-2640-4bb6-aa2f-869cf7e7b88a)
